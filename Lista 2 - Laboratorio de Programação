@@ -1,4 +1,4 @@
-Exercício 1
+ExercÃ­cio 1
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -14,7 +14,7 @@ int main()
     return 0;
 }
 
-Exercício 2
+ExercÃ­cio 2
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -46,7 +46,7 @@ int main()
     return 0;
 }
 
-Exercício 3
+ExercÃ­cio 3
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -66,7 +66,7 @@ int main()
     return 0;
 }
 
-Exercício 4
+ExercÃ­cio 4
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -81,7 +81,7 @@ int main()
     return 0;
 }
 
-Exercício 5
+ExercÃ­cio 5
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -91,7 +91,7 @@ int main()
     int soma=0, num;
 
     for(int i=1; i<=10;i++){
-        printf("Digite o %d° numero: ",i);
+        printf("Digite o %dÂ° numero: ",i);
         scanf("%d", &num);
         printf("\n");
         soma = soma + num;
@@ -102,7 +102,7 @@ int main()
     return 0;
 }
 
-Exercício 6
+ExercÃ­cio 6
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -112,7 +112,7 @@ int main()
     float soma=0, num;
 
     for(int i=1; i<=10;i++){
-        printf("Digite o %d° numero: ",i);
+        printf("Digite o %dÂ° numero: ",i);
         scanf("%f", &num);
         printf("\n");
         soma = soma + num;
@@ -123,7 +123,7 @@ int main()
     return 0;
 }
 
-Exercício 7
+ExercÃ­cio 7
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -133,7 +133,7 @@ int main()
     float soma=0, num;
 
     for(int i=1; i<=10;){
-        printf("Digite o %d° numero: ",i);
+        printf("Digite o %dÂ° numero: ",i);
         scanf("%f", &num);
         printf("\n");
         if(num>0){
@@ -147,7 +147,7 @@ int main()
     return 0;
 }
 
-Exercício 8
+ExercÃ­cio 8
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -157,7 +157,7 @@ int main()
     int maior, menor, num;
 
     for(int i=1; i<=10;i++){
-        printf("Digite o %d° numero: ",i);
+        printf("Digite o %dÂ° numero: ",i);
         scanf("%d", &num);
         printf("\n");
         if(i==1){
@@ -178,7 +178,7 @@ int main()
     return 0;
 }
 
-Exercício 9
+ExercÃ­cio 9
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -200,7 +200,7 @@ int main()
     return 0;
 }
 
-Exercício 10
+ExercÃ­cio 10
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -219,7 +219,7 @@ int main()
     return 0;
 }
 
-Exercício 11
+ExercÃ­cio 11
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -238,7 +238,7 @@ int main()
     return 0;
 }
 
-Exercício 12
+ExercÃ­cio 12
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -261,7 +261,7 @@ int main()
     return 0;
 }
 
-Exercício 13
+ExercÃ­cio 13
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -286,7 +286,7 @@ int main()
     return 0;
 }
 
-Exercício 14
+ExercÃ­cio 14
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -325,7 +325,7 @@ int main(){
 	return 0;
 }
 
-Exercício 15
+ExercÃ­cio 15
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -353,7 +353,7 @@ int main(){
 	return 0;
 }
 
-Exercício 16
+ExercÃ­cio 16
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -369,7 +369,7 @@ Exercício 16
         printf("\n2-      Subtracao (x-y)");
         printf("\n3-    Multiplicacao (xy)");
         printf("\n4-       Divisao (x/y)");
-        printf("\n5-           Saída");
+        printf("\n5-           SaÃ­da");
         printf("\nOpcao: ");
         scanf("%d", &opcao);
 
@@ -409,7 +409,7 @@ Exercício 16
     return 0;
 }
 
-Exercício 17
+ExercÃ­cio 17
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -428,7 +428,7 @@ Exercício 17
     return 0;
 }
 
-Exercício 18
+ExercÃ­cio 18
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -446,7 +446,7 @@ Exercício 18
     return 0;
 }
 
-Exercício 19
+ExercÃ­cio 19
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -502,7 +502,7 @@ Exercício 19
     return 0;
 }
 
-Exercício 20
+ExercÃ­cio 20
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -531,7 +531,7 @@ int main()
     return 0;
 }
 
-Exercício 21
+ExercÃ­cio 21
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -572,7 +572,7 @@ int main()
     return 0;
 }
 
-Exercício 22
+ExercÃ­cio 22
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -610,7 +610,7 @@ int main(){
 	return 0;
 }
 
-Exercício 23
+ExercÃ­cio 23
 
 #include <stdio.h>
 #include <stdlib.h>
