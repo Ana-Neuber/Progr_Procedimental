@@ -1,0 +1,1145 @@
+Lista 5 de  Programação Procedimental
+Ana Laura Neuber de Castro Carvalho - 12221BCC027
+
+Vetores ===================================================
+
+Exercício 1
+
+#include <stdio.h>
+
+int main(){
+	int A[6]={1,0,5,-2,-5,7}, soma;
+	
+	soma = A[0] + A[1] + A[5];
+	printf("Soma: %d", soma);
+	
+	A[4]=100;
+	
+	for(int i=0; i<6; i++){
+		printf("\nA[%d]: %d", i, A[i]);		
+	}
+	
+	return 0;
+}
+
+Exercício 2
+
+#include <stdio.h>
+
+int main(){
+	int A[8], x, y;
+	
+	for(int i=0; i<8; i++){
+		printf("\nA[%d]: ", i);		
+		scanf("%d", &A[i]);
+	}
+
+	printf("\nX: ");
+	scanf("%d", &x);
+	printf("Y: ");
+	scanf("%d", &y);
+	
+	if(x>=0 && x<8 && y>=0 && y<8){
+		printf("\nA[%d]: %d", x, A[x]);	
+		printf("\nA[%d]: %d", y, A[y]);	
+	}
+	else{
+		printf("Valor inexistente");	
+	}
+	
+	return 0;
+}
+
+Exercício 3
+
+#include <stdio.h>
+
+int main(){
+	int A[6];
+	
+	for(int i=0; i<6; i++){
+		printf("\nA[%d]: ", i);		
+		scanf("%d", &A[i]);
+	}
+	
+	for(int i=5; i>=0; i--){
+		printf("\nA[%d]: %d", i, A[i]);	
+	}
+	return 0;
+}
+
+Exercício 4
+
+#include <stdio.h>
+
+int main(){
+	int A[5], maior=0, menor=0;
+	
+	for(int i=0; i<5; i++){
+		printf("\nA[%d]: ", i);		
+		scanf("%d", &A[i]);
+	}
+	
+	for(int i=5; i>=0; i--){
+		if(A[i]>A[maior]){
+			maior = i;
+		}
+		if(A[i]<A[menor]){
+			menor = i;
+		}
+	}
+	
+	printf("\nMaior => A[%d]: %d", maior, A[maior]);		
+	printf("\nMenor => A[%d]: %d", menor, A[menor]);
+
+	return 0;
+}
+
+Exercício 5
+
+#include <stdio.h>
+
+int main(){
+	int A[50];
+	
+	for(int i=0; i<50; i++){
+		A[i]=(i+(5*i))%(i+1);
+	}
+	
+	for(int i=0; i<50; i++){
+		printf("\nA[%d]: %d", i, A[i]);	
+	}
+
+	return 0;	
+}
+
+Exercício 6
+
+#include <stdio.h>
+
+int checaprimo(int num){
+	int i, count=0;
+	if(num==2 || num==3 || num==5 || num==7){
+		return 1;
+	}
+	else if(num%2==0 || num%3==0 || num%5==0 || num%7==0){
+		return 0;
+	}
+	else{
+		for(i=11; i<num; i++){
+			if(num%i==0){
+				return 0;
+			}
+			else{
+				count++;
+			}
+		}
+		if(count == i){
+			return 1;
+		}
+	}
+}
+int main(){
+	int A[10];
+	
+	for(int i=0; i<10; i++){
+		printf("\nA[%d]:", i);
+		scanf("%d", &A[i]);
+	}
+	printf("\nPrimos: ");	
+	for(int i=0; i<10; i++){
+		if(checaprimo(A[i])){
+			printf("\n A[%d]: %d", i, A[i]);	
+		}
+	}
+
+	return 0;	
+}
+
+Exercício 7
+
+#include <stdio.h>
+
+int parouimpar(int a){
+	if(a%2==0){
+		return 1;
+	}
+	else{
+		return 0;
+	}
+}
+
+int main(){
+	int A[6], soma=0, quantidade=0;
+	
+	for(int i=0; i<6; i++){
+		printf("\nA[%d]:", i);
+		scanf("%d", &A[i]);
+	}
+	
+	printf("\nPares: ");	
+	for(int i=0; i<6; i++){
+		if(parouimpar(A[i])){
+			printf("\n A[%d]: %d", i, A[i]);	
+			soma = soma + A[i];
+		}
+	}
+	
+	printf("\nSoma dos pares: %d", soma);
+	
+	printf("\nImpares: ");	
+	for(int i=0; i<6; i++){
+		if(!parouimpar(A[i])){
+			printf("\n A[%d]: %d", i, A[i]);	
+			quantidade++;
+		}
+	}
+	printf("\nQuantidade de impares: %d", quantidade);
+	return 0;
+}
+
+Exercício 8
+
+#include <stdio.h>
+
+int main(){
+	int A[10];
+	
+	for(int i=0; i<6; i++){
+		denovo:
+		printf("\nA[%d]:", i);
+		scanf("%d", &A[i]);
+		for(int j=0; j<i; j++){
+			if(A[i]==A[j]){
+				goto denovo; //linha 7
+			}
+		}
+	}
+	
+	for(int i=0; i<6; i++){
+		printf("\nA[%d]: %d", i, A[i]);	
+	}
+	return 0;
+}
+
+Exercício 1
+
+#include <stdio.h>
+
+int main(){
+	int A[4][4], maior=0;
+	
+	for(int i=0; i<4; i++){
+		for(int j=0; j<4; j++){
+			printf("\nA[%d][%d]:", i, j);
+			scanf("%d", &A[i][j]);	
+		}
+	}
+	
+	for(int i=0; i<4; i++){
+		for(int j=0; j<4; j++){
+			if(A[i][j]>10){
+				maior++;
+			}
+		}
+	}
+	printf("Existem %d valores maiores que 10 na matriz", maior);
+	return 0;
+}
+
+Matrizes ===================================================
+
+Exercício 1
+
+#include <stdio.h>
+
+int main(){
+	int A[4][4], maior=0;
+	
+	for(int i=0; i<4; i++){
+		for(int j=0; j<4; j++){
+			printf("\nA[%d][%d]:", i, j);
+			scanf("%d", &A[i][j]);	
+		}
+	}
+	
+	for(int i=0; i<4; i++){
+		for(int j=0; j<4; j++){
+			if(A[i][j]>10){
+				maior++;
+			}
+		}
+	}
+	printf("Existem %d valores maiores que 10 na matriz", maior);
+	return 0;
+}
+
+Exercício 2
+
+#include <stdio.h>
+
+int main(){
+	int A[5][5];
+	
+	for(int i=0; i<5; i++){
+		for(int j=0; j<5; j++){
+			if(i==j){
+				A[i][j]=1;
+			}
+			else{
+				A[i][j]=0;
+			}
+		}
+	}
+	
+	for(int i=0; i<5; i++){
+		for(int j=0; j<5; j++){
+			printf("%d ", A[i][j]);
+		}
+		printf("\n");
+	}
+	
+	return 0;
+}
+
+Exercício 3
+
+#include <stdio.h>
+
+int main(){
+	int A[4][4], maiorx=0, maiory=0;
+	
+	for(int i=0; i<4; i++){
+		for(int j=0; j<4; j++){
+		printf("\nA[%d][%d]: ", i, j);		
+		scanf("%d", &A[i][j]);
+		}
+	}
+	
+	for(int i=0; i<4; i++){
+		for(int j=0; j<4; j++){
+			if(A[i][j]>A[maiorx][maiory]){
+				maiorx = i;
+				maiory = j;
+			}
+		}
+	}
+	
+	printf("\nMaior => A[%d][%d]: %d", maiorx, maiory, A[maiorx][maiory]);		return 0;
+}
+
+Exercício 4
+
+#include <stdio.h>
+
+int main(){
+	int A[5][5], x;
+	
+	for(int i=0; i<5; i++){
+		for(int j=0; j<5; j++){
+			printf("\nA[%d][%d]: ", i, j);		
+			scanf("%d", &A[i][j]);
+		}
+	}
+	
+	printf("\nX: ");
+	scanf("%d", &x);
+	
+	for(int i=0; i<4; i++){
+		for(int j=0; j<4; j++){
+			if(A[i][j]==x){
+				printf("\nX = A[%d][%d]", i, j);	
+				return 0;
+			}
+		}
+	}
+	
+	printf("\nValor nao encontrado");		
+	return 0;
+}
+
+Exercício 5
+
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+	int A[10][10];
+	
+	for(int i=0; i<10; i++){
+		for(int j=0; j<10; j++){
+			if(i<j){
+				A[i][j] = (2*i)+(7*j) - 2;
+			}
+			else if(i==j){
+				A[i][j] = (3*pow(i,2)) - 1;
+			}
+			else{
+				A[i][j] = (4*pow(i,3)) - (5*pow(j,2)) + 1;
+			}
+		}
+	}
+	
+	
+	for(int i=0; i<10; i++){
+		for(int j=0; j<10; j++){
+			printf("\nA[%d][%d] = %d", i, j, A[i][j]);	
+		}
+		printf("\n");	
+	}
+	
+	return 0;		
+}
+
+Exercício 6
+
+
+int main(){
+	int A[4][4], B[4][4];
+	
+	for(int i=0; i<4; i++){
+		for(int j=0; j<4; j++){
+			denovo:
+			printf("\nA[%d][%d]: ", i, j);		
+			scanf("%d", &A[i][j]);
+			if(A[i][j]<1 && A[i][j]>20){
+				goto denovo; // linha 9
+			}
+		}
+	}
+	
+	
+	for(int i=0; i<4; i++){
+		for(int j=0; j<4; j++){
+			if(j>i){
+				B[i][j]=0;
+			}
+			else{
+				B[i][j]=A[i][j];
+			}
+		}
+	}
+	printf("\nMATRIZ ORIGINAL\n");
+	for(int i=0; i<4; i++){
+		for(int j=0; j<4; j++){
+			printf("%d ", A[i][j]);
+		}
+		printf("\n");
+	}
+	
+	printf("\nMATRIZ TRIANGULAR INFERIOR\n");
+	for(int i=0; i<4; i++){
+		for(int j=0; j<4; j++){
+			printf("%d ", B[i][j]);
+		}
+		printf("\n");
+	}
+	
+	return 0;		
+}
+
+Exercício 7
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+
+int main(){
+	int cartela[5][5];
+	srand(time(NULL));
+	for(int i=0; i<5; i++){
+		for(int j=0; j<5; j++){
+			denovo:
+			cartela[i][j]= 1+(int) (99.0*rand()/(RAND_MAX+1.0));
+			for(int k=0; k<i; k++){
+				for(int l=0; l<j; l++){
+					if(cartela[i][j]==cartela[k][l]){
+						goto denovo; //linha 14
+					}
+				}	
+			}
+		}
+	}
+	
+	for(int i=0; i<5; i++){
+		for(int j=0; j<5; j++){
+			printf("%d ", cartela[i][j]);		
+		}
+		printf("\n");
+		
+	}
+
+	return 0;
+}
+
+Exercício 8
+
+#include <stdio.h>
+
+int main(){
+	int A[2][2], B[2][2], opcao, constante;
+	
+	printf("Digite duas matrizes:\n");
+	for(int i=0; i<2; i++){
+		for(int j=0; j<2; j++){
+			printf("\nA[%d][%d]: ", i, j);		
+			scanf("%d", &A[i][j]);
+		}
+	}
+	for(int i=0; i<2; i++){
+		for(int j=0; j<2; j++){
+			printf("\nB[%d][%d]: ", i, j);		
+			scanf("%d", &B[i][j]);
+		}
+	}
+	
+	for(;opcao != 'e';){
+		printf("\nEscolha uma opcao: ");
+		printf("\na - somar as duas matrizes.");
+		printf("\nb - subtrair a matriz A da matriz B.");
+		printf("\nc - adicionar uma constante as duas matrizes");
+		printf("\nd - imprimir as matrizes");
+		printf("\ne - encerrar\n");
+		scanf(" %c",&opcao);
+		
+		if(opcao=='a' || opcao=='A'){
+			printf("\nMatriz A + B\n");
+			for(int i=0; i<2; i++){
+				for(int j=0; j<2; j++){
+					printf("%d ", A[i][j]+B[i][j]);
+				}
+				printf("\n");
+			}
+		}
+		else if(opcao=='b' || opcao=='B'){
+			printf("\nMatriz A - B\n");
+			for(int i=0; i<2; i++){
+				for(int j=0; j<2; j++){
+				printf("%d ", B[i][j]-A[i][j]);
+				}
+				printf("\n");
+			}
+		}
+		else if(opcao=='c' || opcao=='C'){
+			printf("\nDigite a constante: ");
+			scanf("%d", &constante);
+			printf("\nMatriz A + %d\n", constante);
+			for(int i=0; i<2; i++){
+				for(int j=0; j<2; j++){
+				printf("%d ", A[i][j]+constante);
+				}
+				printf("\n");
+			}
+			printf("\nMatriz B + %d\n");
+			for(int i=0; i<2; i++){
+				for(int j=0; j<2; j++){
+				printf("%d ", B[i][j]+constante);
+				}
+				printf("\n");
+			}
+		}
+		else if(opcao=='d' || opcao=='D'){
+			printf("\nMatriz A\n");
+			for(int i=0; i<2; i++){
+				for(int j=0; j<2; j++){
+				printf("%d ", A[i][j]);
+				}
+				printf("\n");
+			}
+			printf("\nMatriz B\n");
+			for(int i=0; i<2; i++){
+				for(int j=0; j<2; j++){
+				printf("%d ", B[i][j]);
+				}
+				printf("\n");
+			}
+		}
+		else if(opcao=='e' || opcao=='E'){
+			return 0;
+		}
+		else{
+			printf("\nOpcao invalida!");
+				return 0;
+		}
+	}
+}
+
+Strings ===================================================
+
+Exercício 1
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+	char str[100];
+	setbuf(stdin, NULL);
+	gets(str);
+	
+	printf("%s", str);
+
+	return 0;
+}
+
+Exercício 2
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+	char str[100];
+	int uns=0;
+	
+	printf("Digite um numero binario de ate 99 caracteres: ");
+	setbuf(stdin, NULL);
+	gets(str);
+	
+	for(int i=0; str[i]!='\0'; i++){
+		if(str[i]=='1'){
+			uns++;
+		}
+	}
+	printf("O numero %s tem %d numeros 1", str, uns);
+
+	return 0;
+}
+
+Exercício 3
+
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+	char str[100];
+	int tam=0;
+	
+	printf("Digite uma palavra: ");
+	setbuf(stdin, NULL);
+	gets(str);
+	tam = strlen(str);
+	
+	
+	for(int i=tam-1; i>=0; i--){
+		printf("%c", str[i]);
+	}
+	
+	return 0;
+}
+
+Exercício 4
+
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+	char str[100], modificada[100], ch;
+	int  tam=0, vogais=0;
+	
+	printf("Digite uma palavra: ");
+	setbuf(stdin, NULL);
+	gets(str);
+	tam = strlen(str);
+	printf("Digite um caractere para substituir as vogais: ");
+	scanf("%c", &ch);
+	
+	for(int i=0; i<tam; i++){
+		if(str[i]=='a' || str[i]=='A' || str[i]=='e'|| str[i]=='E' || str[i]=='i' || str[i]=='I' || str[i]=='o' || str[i]=='O' || str[i]=='u' || str[i]=='U'){
+			vogais++;
+			modificada[i]=ch;
+		}
+		else{
+			modificada[i]=str[i];
+		}
+	}
+	
+	printf("A palavra %s tem %d vogais\nColocando %c no lugar delas eh: %s", str, vogais, ch, modificada);
+	
+	return 0;
+}
+
+Exercício 5
+
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+	char str[100], modificada[100];
+
+	
+	printf("Digite uma palavra: ");
+	setbuf(stdin, NULL);
+	gets(str);
+	
+	for(int i=0; i<strlen(str); i++){
+		if(str[i]>=65 && str[i]<=90){
+			modificada[i]=str[i]+32;
+		}
+		else{
+			modificada[i]=str[i];
+		}
+	}
+	
+	printf("\n%s",modificada);
+	
+	return 0;
+}
+
+Exercício 6
+
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+	char str[100], modificada[100];
+
+	
+	printf("Digite uma palavra: ");
+	setbuf(stdin, NULL);
+	gets(str);
+	
+	for(int i=0; i<strlen(str); i++){
+		if(str[i]>=97 && str[i]<=122){
+			modificada[i]=str[i]-32;
+		}
+		else{
+			modificada[i]=str[i];
+		}
+	}
+	
+	printf("\n%s",modificada);
+	
+	return 0;	
+}
+
+Exercício 7
+
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+	char str[100], modificada[100];
+	int k=0;
+	
+	printf("Digite uma palavra: ");
+	setbuf(stdin, NULL);
+	gets(str);
+	
+	for(int i=0; i+k<strlen(str); i++){
+		denovo:
+		if(str[i+k]==' '){
+			k++;
+			goto denovo;
+		}
+		modificada[i]=str[i+k];
+	}
+	
+	printf("\n%s",modificada);
+
+	return 0;	
+}
+
+Exercício 8
+
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+	char str[100], modificada[100], L1, L2;
+	
+	printf("Digite uma palavra: ");
+	setbuf(stdin, NULL);
+	gets(str);
+	printf("Digite uma letra para ser substituida: ");
+	scanf(" %c", &L1);
+	printf("Digite uma letra para substituir %c: ", L1);
+	scanf(" %c", &L2);
+	
+	
+	for(int i=0; i<strlen(str); i++){
+		if(str[i]==L1 || str[i]==L1-32 || str[i]==L1+32){
+			modificada[i]=L2;
+		}
+		else{
+			modificada[i]=str[i];
+		}
+		
+	}
+	
+	printf("\n%s",modificada);
+
+	return 0;
+}
+
+Exercício 9
+
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+	char modelos[5][100];
+	int consumo[5], mais_econom = 0;
+	
+	
+	printf("Digite 5 modelos de carro e seu consumo: ");
+	
+	for(int i=0; i<5; i++){
+		
+		printf("\n\nModelo de carro %d: ", i+1);
+		setbuf(stdin, NULL);
+		gets(modelos[i]);
+		
+		printf("\nConsumo do modelo %d: ", i+1);
+		scanf(" %d", &consumo[i]);
+		
+	}
+	
+	for(int i=0; i<5; i++){
+		
+		if(consumo[i]>consumo[mais_econom]){
+			mais_econom = i;
+		}
+		
+	}	
+	
+	printf("\nModelo mais economico: %s\n", modelos[mais_econom]);
+	
+	printf("Gasto para percorrer 1000km:");
+	for(int i=0; i<5; i++){
+		printf("\n%s: %fL", modelos[i], 1000.0/consumo[i]);
+	}
+	
+	return 0;
+}
+
+Exercício 10
+
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+	char mercadoria[100];
+	float valor;
+	
+	printf("Nome da mercadoria: ");
+	setbuf(stdin, NULL);
+	gets(mercadoria);
+		
+	printf("\nPreco: R$");
+	scanf(" %f", &valor);
+	
+	printf("\n%s\n", mercadoria);
+	printf("\n%.2f\n", valor);
+	printf("\n%.2f\n", valor*0.1);
+	printf("\n%.2f\n", valor-valor*0.1);
+
+	return 0;
+}
+
+Exercício 11
+
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+	char string[100];
+	int i, j;
+	
+	printf("String: ");
+	setbuf(stdin, NULL);
+	gets(string);
+		
+	printf("\ni: ");
+	scanf(" %d", &i);
+	printf("\nj: ");
+	scanf(" %d", &j);
+	
+	if(j<strlen(string) && i<strlen(string) && j>=0 && i>=0 ){
+		for(;i<=j;i++){
+			printf("%c", string[i]);
+		}	
+	}
+	else{
+		printf("Limite invalido");
+	}
+	
+	
+	return 0;
+}
+
+Exercício 12
+
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+	char string[100];
+	
+	
+	printf("String: ");
+	setbuf(stdin, NULL);
+	gets(string);
+	
+	for(int i;i<strlen(string);i++){
+		if(string[i]>=97 && string[i]<=122){
+			printf("%c", string[i]-29);	
+		}
+		else if(string[i]==' '){
+			printf(" ");
+		}
+		else{
+			printf("%c", string[i]+3);
+		}
+		
+	}
+	
+	return 0;
+} 
+
+Exercício 13
+
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+	char string[100], apenasletras[100];
+	int k=0, count=0;
+	
+	printf("String: ");
+	setbuf(stdin, NULL);
+	gets(string);
+	
+	for(int i;i+k<strlen(string);i++){
+		simbolo:
+		if(string[i+k]>=65 && string[i+k]<=90){
+			apenasletras[i]=string[i+k]+32;
+		}
+		else if(string[i+k]>=97 && string[i+k]<=122){
+			apenasletras[i]=string[i+k];
+		}
+		else{
+			k++;
+			goto simbolo;
+		}
+	}
+	
+	for(int i=0; i<strlen(apenasletras); i++){
+		if(apenasletras[i]==apenasletras[strlen(apenasletras)-(i+1)]){
+			count++;
+		}
+	}
+	
+	if(count == strlen(apenasletras)){
+		printf("%s eh palindromo!", string);
+	}
+	else{
+		printf("%s nao eh palindromo!", string);
+	}
+	
+	return 0;
+} 
+
+Exercício 14
+
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+	char str1[100], str2[100];
+	int N;
+	
+	printf("String 1: ");
+	setbuf(stdin, NULL);
+	gets(str1);
+	
+	printf("String 2: ");
+	setbuf(stdin, NULL);
+	gets(str2);
+	
+	printf("N: ");
+	scanf("%d", &N);
+	
+	for(int i=0; i<strlen(str2); i++){
+		if(i==N-1){
+			str2[i+1]='\0';
+		}
+	}
+	
+	strcat(str1, str2);
+	printf("%s", str1);
+	
+	return 0;
+} 
+
+Exercício 15
+
+#include <stdio.h>
+#include <string.h>
+
+void reversa(char string[21]){
+	printf("\n");
+	for(int i=strlen(string)-1; i>=0; i--){
+		printf("%c", string[i]);
+	}
+}
+
+int caractere(char string[21], char caractere){
+	int count=0;
+	for(int i=0; i<strlen(string); i++){
+		if(string[i]==caractere){
+			count++;
+		}
+	}
+	return count;
+}
+
+void substituir(char string[21], char c1, char c2){
+	int primeira=0;
+	for(int i=0; i<strlen(string); i++){
+		if(string[i]==c1 && primeira==0){
+			string[i] = c2;
+		}
+	}
+	printf("\n%s", string);
+}
+
+int verifica_substring(char s1[21], char s2[21]){
+	int k=0;
+	for(int i=0; i<strlen(s1) && k<strlen(s2); i++){
+		if(s1[i]==s2[k]){
+			k++;
+		}
+		else{
+			k=0;
+		}
+	}
+	
+	if(k==strlen(s2)){
+		return 1;
+	}
+	else{
+		return 0;
+	}
+}
+
+void retorna_substring(char string[21],int i,int j){
+	for(; i<=j; i++){
+		printf("%c", string[i]);
+	}
+}
+
+int main(){
+	char s1[21], s2[21], s3[21], c1, c2, opcao='a';
+	
+	do{
+		printf("\n\n========== MENU ===========");
+		printf("\na) Ler uma string S1;");
+		printf("\nb) Imprimir o tamanho da string S1;");
+		printf("\nc) Comparar a string S1 com uma nova string S2 fornecida pelo usuário e imprimir o resultado da comparação;");
+		printf("\nd) Concatenar a string S1 com uma nova string S2 e imprimir na tela o resultado da concatenação;");
+		printf("\ne) Imprimir a string S1 de forma reversa;");
+		printf("\nf) Contar quantas vezes um dado caractere aparece na string S1;");
+		printf("\ng) Substituir a primeira ocorrência do caractere C1 da string S1 pelo caractere C2;");
+		printf("\nh) Verificar se uma string S2 é substring de S1;");
+		printf("\ni) Retornar uma substring da string S1;");
+		printf("\nj) Encerrar o programa");
+		printf("\n\nOpcao: ");
+		scanf(" %c", &opcao);
+		
+	
+		switch(opcao){
+			case 'a':
+				printf("String S1: ");
+				fgets(s1, 20, stdin);
+			break;
+			case 'b':
+				printf("Tamanho da string S1: %d", strlen(s1));
+			break;
+			case 'c':
+				printf("String S2: ");
+				fgets(s2, 20, stdin);
+				if(strcmp(s1, s2)!=0){
+					printf("%s e %s sao diferentes!", s1, s2);
+				}
+				else{
+					printf("%s e %s sao iguais!", s1, s2);
+				}
+			break;
+			case 'd':
+				printf("String S2: ");
+				fgets(s2, 20, stdin);
+				strcpy(s3, s1);
+				printf("%s", strcat(s3,s2));
+			break;
+			case 'e':
+				reversa(s1);
+			break;
+			case 'f':
+				printf("Caractere C1: ");
+				scanf(" %c", &c1);
+				printf("O caractere %c aparece %d vezes.", c1, caractere(s1, c1));
+			break;
+			case 'g':
+				printf("Caractere C1: ");
+				scanf(" %c", &c1);
+				printf("Caractere C2: ");
+				scanf(" %c", &c2);
+				substituir(s1, c1, c2);
+			break;
+			case 'h':
+				printf("String S2: ");
+				fgets(s2, 20, stdin);
+				if(verifica_substring(s1,s2)==1){
+					printf("%s eh substring de %s!", s2, s1);
+				}
+				else{
+					printf("%s nao eh substring de %s!", s2, s1);
+				}
+			break;
+			case 'i':
+				int i, j;
+				printf("inicio da substring: ");
+				scanf("%d", &i);
+				printf("Fim da substring: ");
+				scanf("%d", &j);
+				retorna_substring(s1, i, j);
+			break;
+			case 'j':
+			break;
+			default: 
+				printf("Opcao invalida!");
+		}
+		
+	}while(!(opcao=='j'));
+	
+	return 0;
+} 
+
+Exercício 16
+
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+	char string[1000000] = "7316717653133062491922511967442657474235534919493496983520312774506326239578318016984801869478851843858615607891129494954595017379583319528532088055111254069874715852386305071569329096329522744304355766896648950445244523161731856403098711121722383113622298934233803081353362766142828064444866452387493035890729629049156044077239071381051585930796086670172427121883998797908792274921901699720888093776657273330010533678812202354218097512545405947522435258490771167055601360483958644670632441572215539753697817977846174064955149290862569321978468622482839722413756570560574902614079729686524145351004748216637048440319989000889524345065854122758866688116427171479924442928230863465674813919123162824586178664583591245665294765456828489128831426076900422421902267105562632111110937054421750694165896040807198403850962455444362981230987879927244284909188845801561660979191338754992005240636899125607176060588611646710940507754100225698315520005593572972571636269561882670428252483600823257530";
+	int maior, posicao, a, b, c, d, e;
+	for(int i=0; i<strlen(string); i++){
+		a = string[i] - '0';
+		b = string[i+1]  - '0';
+		c = string[i+2]  - '0';
+		d = string[i+3]  - '0';
+		e = string[i+4]  - '0';
+		if(i==0){
+			maior = a*b*c*d*e;
+			posicao = i;
+		}
+		if(a*b*c*d*e>maior){
+			maior = a*b*c*d*e;
+			posicao = i;
+		}
+	}
+	printf("A sequencia com maior resultade de multiplicacao eh %c%c%c%c%c e o resultado dela eh %d", string[posicao], string[posicao+1], string[posicao+2], string[posicao+3], string[posicao+4], maior);
+	return 0;
+} 
+
+
