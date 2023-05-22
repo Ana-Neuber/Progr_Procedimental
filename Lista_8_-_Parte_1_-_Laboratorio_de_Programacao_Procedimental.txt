@@ -1,0 +1,203 @@
+Lista 8 - Laboratório de Programação Procedimental
+Ana Laura Neuber de Castro Carvalho - 12221BCC027
+
+Exercício 1 
+
+a)10;
+b)20;
+c)1000;
+d)1004;
+e)1004;
+f)1004;
+g)40;
+h)10;
+i)1004;
+
+Exercício 2
+
+#include <stdio.h>
+
+int main()
+{
+    int inteiro, *p_int;
+    float real, *p_float;
+    char caractere, *p_char;
+
+    p_int = &inteiro;
+    p_float = &real;
+    p_char = &caractere;
+
+    *p_int = 10;
+    *p_float = 25.3;
+    *p_char = 'a';
+
+    printf("inteiro: %d \nreal: %.1f \ncaractere: %c", inteiro, real, caractere);
+
+    return 0;
+}
+
+Exercício 3
+
+#include <stdio.h>
+
+int main()
+{
+    int a=10, b=25, *p_a, *p_b;
+
+    p_a = &a;
+    p_b = &b;
+
+    if(p_a>p_b){
+        printf("Conteudo do maior endereco: %d", *p_a);
+    }
+    else{
+        printf("Conteudo do maior endereco: %d", *p_b);
+    }
+
+    return 0;
+}
+
+Exercício 4
+
+#include <stdio.h>
+
+int main()
+{
+    int a, b, *p_a, *p_b;
+
+    p_a = &a;
+    p_b = &b;
+
+    printf("Digite os valores de");
+    printf("\nA: ");
+    scanf("%d", p_a);
+    printf("B: ");
+    scanf("%d", p_b);
+
+    if(p_a>p_b){
+        printf("Conteudo do maior endereco: %d", *p_a);
+    }
+    else{
+        printf("Conteudo do maior endereco: %d", *p_b);
+    }
+
+    return 0;
+}
+
+Exercício 5
+
+#include <stdio.h>
+
+int main()
+{
+    int a, b, *p_a, *p_b;
+
+    p_a = &a;
+    p_b = &b;
+
+    printf("Digite os valores de");
+    printf("\nA: ");
+    scanf("%d", p_a);
+    printf("B: ");
+    scanf("%d", p_b);
+
+    *p_a *= 2;
+    *p_b *= 2;
+
+    printf("2*(A+B) = %d", a+b);
+
+    return 0;
+}
+
+Exercício 6
+
+#include <stdio.h>
+
+int main()
+{
+    int a, b, *p_a, *p_b;
+
+    p_a = &a;
+    p_b = &b;
+
+    printf("Digite os valores de");
+    printf("\nA: ");
+    scanf("%d", p_a);
+    printf("B: ");
+    scanf("%d", p_b);
+
+    printf("\nA = %d", a);
+    printf("\nB = %d", b);
+    printf("\nA + B = %d", a+b);
+    printf("\nA - B = %d", a-b);
+    printf("\nB - A = %d", b-a);
+    printf("\nA * B = %d", a*b);
+    if(a){
+        printf("\nB / A = %f", b/((1.0)*a));
+    }
+    if(b){
+        printf("\nA / B = %f", a/((1.0)*b));
+    }
+    if(!(a||b)){
+        printf("\nNao existe divisao envolvendo dois 0");
+    }
+
+    return 0;
+}
+
+Exercício 7
+
+#include <stdio.h>
+
+int main()
+{
+    int vetor[3], *p[3], aux[3]={0,0,0};
+
+    for(int i=0; i<3; i++){
+        p[i] = &vetor[i];
+    }
+    for(int i=0; i<3; i++){
+        printf("\nValor %d: ", i+1);
+        scanf("%d", p[i]);
+    }
+
+    for(int i=0; i<3; i++){
+        for(int j=i+1; j<3; j++){
+            if(vetor[i]>vetor[j]){
+                aux[j]++;
+            }
+        }
+    }
+    for(int i=2; i>=0; i--){
+        for(int j=0; j<3; j++){
+            if(aux[j]==i){
+                printf("\nValor %d: %d - Endereco: %p", j+1, vetor[j], p[j]);
+            }
+        }
+    }
+    
+    return 0;
+}
+
+Exercício 8
+
+#include <stdio.h>
+
+int main()
+{
+    int vetor[6], *p, aux;
+
+
+    for(int i=0; i<6; i++){
+        printf("\nValor %d: ", i+1);
+        scanf("%d", &vetor[i]);
+    }
+
+    p = &vetor[0];
+
+    for(int i=0; i<6; i++){
+        printf("\nValor %d: %d - Endereco: %p", i+1, *(p+i), (p+i));
+    }
+
+    return 0;
+}
