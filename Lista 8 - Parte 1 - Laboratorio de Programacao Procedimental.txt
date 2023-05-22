@@ -1,7 +1,7 @@
-Lista 8 - Laboratório de Programação Procedimental
+Lista 8 - LaboratÃ³rio de ProgramaÃ§Ã£o Procedimental
 Ana Laura Neuber de Castro Carvalho - 12221BCC027
 
-Exercício 1 
+ExercÃ­cio 1 
 
 a)10;
 b)20;
@@ -13,7 +13,7 @@ g)40;
 h)10;
 i)1004;
 
-Exercício 2
+ExercÃ­cio 2
 
 #include <stdio.h>
 
@@ -36,7 +36,7 @@ int main()
     return 0;
 }
 
-Exercício 3
+ExercÃ­cio 3
 
 #include <stdio.h>
 
@@ -57,7 +57,7 @@ int main()
     return 0;
 }
 
-Exercício 4
+ExercÃ­cio 4
 
 #include <stdio.h>
 
@@ -84,7 +84,7 @@ int main()
     return 0;
 }
 
-Exercício 5
+ExercÃ­cio 5
 
 #include <stdio.h>
 
@@ -109,7 +109,7 @@ int main()
     return 0;
 }
 
-Exercício 6
+ExercÃ­cio 6
 
 #include <stdio.h>
 
@@ -145,7 +145,7 @@ int main()
     return 0;
 }
 
-Exercício 7
+ExercÃ­cio 7
 
 #include <stdio.h>
 
@@ -179,7 +179,7 @@ int main()
     return 0;
 }
 
-Exercício 8
+ExercÃ­cio 8
 
 #include <stdio.h>
 
